@@ -57,6 +57,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Emergency service colors
+        ambulance: {
+          DEFAULT: "hsl(var(--ambulance))",
+          glow: "hsl(var(--ambulance-glow))",
+        },
+        fire: {
+          DEFAULT: "hsl(var(--fire))",
+          glow: "hsl(var(--fire-glow))",
+        },
+        police: {
+          DEFAULT: "hsl(var(--police))",
+          glow: "hsl(var(--police-glow))",
+        },
+      },
+      backgroundImage: {
+        "gradient-ambulance": "var(--gradient-ambulance)",
+        "gradient-fire": "var(--gradient-fire)",
+        "gradient-police": "var(--gradient-police)",
+        "gradient-dark": "var(--gradient-dark)",
+      },
+      boxShadow: {
+        "glow-ambulance": "var(--shadow-ambulance)",
+        "glow-fire": "var(--shadow-fire)",
+        "glow-police": "var(--shadow-police)",
+        "glow": "var(--shadow-glow)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,17 +105,7 @@ export default {
             height: "0",
           },
         },
-        "pulse-emergency": {
-          "0%, 100%": {
-            transform: "scale(1)",
-            boxShadow: "0 0 0 0 hsl(var(--emergency-red) / 0.7)",
-          },
-          "50%": {
-            transform: "scale(1.05)",
-            boxShadow: "0 0 0 10px hsl(var(--emergency-red) / 0)",
-          },
-        },
-        "slide-up": {
+        "fade-in": {
           "0%": {
             opacity: "0",
             transform: "translateY(20px)",
@@ -100,12 +115,40 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "slide-in": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.7",
+          },
+        },
+        "emergency-pulse": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            opacity: "0.8",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-emergency": "pulse-emergency 2s infinite",
-        "slide-up": "slide-up 0.3s ease-out",
+        "fade-in": "fade-in 0.6s ease-out",
+        "slide-in": "slide-in 0.5s ease-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "emergency-pulse": "emergency-pulse 2s ease-in-out infinite",
       },
     },
   },
